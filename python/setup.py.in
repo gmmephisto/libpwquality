@@ -22,21 +22,21 @@ class build_ext(_build_ext):
         _build_ext.run(self)
 
 pwqmodule = Extension('pwquality',
-            sources = ['pwquality.c'],
-            include_dirs = ['../src'],
-            library_dirs = ['../src/.libs'],
-            libraries = ['pwquality'])
+            sources=['pwquality.c'],
+            include_dirs=['../src'],
+            library_dirs=['../src/.libs'],
+            libraries=['pwquality'])
 
 setup(
-    name = 'pwquality',
-    version = '@VERSION@',
-    description = 'Python bindings for the libpwquality library for password quality checking',
-    author = 'Tomáš Mráz',
-    author_email = 'tm@t8m.info',
-    url = 'http://fedorahosted.org/libpwquality',
-    license = 'BSD or GPLv2+',
-    ext_modules = [pwqmodule],
-    cmdclass = {'build_ext': build_ext}
+    name='pwquality',
+    version='@VERSION@',
+    description='Python bindings for the libpwquality library for password quality checking',
+    author='Tomáš Mráz',
+    author_email='tm@t8m.info',
+    url='http://fedorahosted.org/libpwquality',
+    license='BSD or GPLv2+',
+    ext_modules=[pwqmodule],
+    cmdclass={'build_ext': build_ext}
 )
 
 # Copyright (c) Red Hat, Inc, 2011
