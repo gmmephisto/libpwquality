@@ -6,7 +6,7 @@
 pythonincdir = $(includedir)/python@PYTHONREV@
 pythonsitedir = @PYTHONSITEDIR@
 
-CLEANFILES = *~ constants.c *.so
+CLEANFILES = *~ constants.c *.so MANIFEST
 
 EXTRA_DIST = pwquality.c setup.py
 

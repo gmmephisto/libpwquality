@@ -1,0 +1,4 @@
+recursive-include pwquality *.c *.h
+include setup.py
+include pwquality.c
+include constants.c
