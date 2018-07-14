@@ -15,3 +15,6 @@ all-local:
 
 install-exec-local:
 	CFLAGS="${CFLAGS} -fno-strict-aliasing" @PYTHONBINARY@ setup.py build --build-base py$(PYTHONREV) install --prefix=${DESTDIR}${prefix}
+
+sdist:
+	@PYTHONBINARY@ setup.py sdist
