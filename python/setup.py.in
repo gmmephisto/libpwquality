@@ -19,14 +19,15 @@ class build_ext(_build_ext):
                         of.write('PyModule_AddIntConstant(module, "%s", %s);\n' % (s[1], s[2]))
 
     def run(self):
-        self.genconstants('../src/pwquality.h', 'constants.c')
+        self.genconstants('pwquality/pwquality.h', 'constants.c')
         _build_ext.run(self)
 
 
 pwqmodule = Extension('pwquality', ['pwquality.c'],
-                      include_dirs=['../src'],
-                      library_dirs=['../src/.libs'],
-                      libraries=['pwquality'])
+                      include_dirs=['pwquality'],
+                      library_dirs=['pwquality/.libs'],
+                      depends=['pwquality/pwquality.h'],
+                      libraries=["pwquality", "crack"])
 
 setup(
     name='pwquality',
