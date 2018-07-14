@@ -23,11 +23,10 @@ class build_ext(_build_ext):
         _build_ext.run(self)
 
 
-pwqmodule = Extension('pwquality',
-            sources=['pwquality.c'],
-            include_dirs=['../src'],
-            library_dirs=['../src/.libs'],
-            libraries=['pwquality'])
+pwqmodule = Extension('pwquality', ['pwquality.c'],
+                      include_dirs=['../src'],
+                      library_dirs=['../src/.libs'],
+                      libraries=['pwquality'])
 
 setup(
     name='pwquality',
